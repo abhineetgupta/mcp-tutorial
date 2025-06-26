@@ -1,0 +1,25 @@
+{
+  "env": {
+    "DEVBOX_COREPACK_ENABLED": "true"
+  },
+  "packages": [
+    "git@latest",
+    "nodejs@23.10.0",
+    "python@3.13.2",
+    "uv@latest"
+  ],
+  "shell": {
+    "init_hook": [
+      "uv add black isort mcp",
+      "echo 'Welcome to devbox!' > /dev/null"
+    ],
+    "scripts": {
+      "mcp-run-calculator": [
+        "uv run python calculator.py"
+      ],
+      "test": [
+        "echo \"Error: no test specified\" && exit 1"
+      ]
+    }
+  }
+}
